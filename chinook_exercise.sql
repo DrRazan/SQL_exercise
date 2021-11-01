@@ -9,36 +9,48 @@ You can download it here: https://drive.google.com/file/d/0Bz9_0VdXvv9bWUtqM0NBY
 
 -- MAKE YOURSELF FAIMLIAR WITH THE DATABASE AND TABLES HERE
 
-
-
-
-
 --==================================================================
 /* TASK I
 Which artists did not make any albums at all? Include their names in your answer.
 */
-
-
+SELECT Name AS "Artist's Name", Artists.ArtistId, Albums.Title AS Album
+FROM Artists
+LEFT JOIN Albums
+ON Artists.ArtistId = Albums.ArtistId
+WHERE Album IS NULL;
 /* TASK II
 Which artists recorded any tracks of the Latin genre?
 */
+SELECT Artists.Name AS "Artist's Name", Artists.ArtistId, genres.Name AS Genre
+FROM Artists
+LEFT JOIN genres
+ON Artists.ArtistId = genres.GenreId
 
 
 /* TASK III
 Which video track has the longest length?
 */
-
+SELECT name , MAX(Milliseconds) 
+FROM tracks;
 
 /* TASK IV
 Find the names of customers who live in the same city as the top employee (The one not managed by anyone).
 */
-
+SELECT employees.title  AS "manager",
+customers.firstname, customers.city 
+FROM employees,customers 
+WHERE employees.city=customers.city;
 
 /* TASK V
 Find the managers of employees supporting Brazilian customers.
 */
-
+SELECT employees.firstname ,employees.title  AS "manager",
+customers.Country 
+FROM employees,customers 
+WHERE customers.Country= 'Brazil'
 
 /* TASK VI
 Which playlists have no Latin tracks?
 */
+SELECT playlists.name, genres.Name AS Genre from playlists ,genres
+WHERE Genre <> 'Latin';
