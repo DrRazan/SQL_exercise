@@ -16,7 +16,8 @@ You can download it here: https://drive.google.com/file/d/1E3KQDdGJs4a0i1RoYb8DE
  Find the id's of movies that have been distributed by “Universal Pictures”.
 */
 
-
+SELECT MOVIE_ID FROM 'movie_distributors' INNER JOIN DISTRIBUTORS ON movie_distributors.DISTRIBUTOR_ID= DISTRIBUTORS.DISTRIBUTOR_ID
+WHERE DISTRIBUTORS.NAME='Universal Pictures'
 
 /* TASK II
  Find the name of the companies that distributed movies released in 2006.
