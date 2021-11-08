@@ -18,12 +18,15 @@ We will be working with database northwind.db we have set up and connected to in
 /* TASK II
 Q2. Write a query to get the most expensive and the least expensive Product (name and unit price) (2 separate queries)
 */
-
+SELECT ProductName, QuantityPerUnit 
+FROM Products;
 
 /* TASK III
 Q3. Write a query to count current and discontinued products.
 */
-
+SELECT Count(ProductName)
+FROM Products
+GROUP BY Discontinued;
 
 /* TASK IV
 Q4. Select all product names and their category names (77 rows)
