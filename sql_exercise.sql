@@ -67,7 +67,10 @@ Find all countries which have produced at least one movie with a rating higher t
 8.5.
 hint: subquery
 */
-
+SELECT *
+FROM films
+WHERE release_year <> 2015
+ORDER BY duration;
 
 
 
