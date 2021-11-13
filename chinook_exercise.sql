@@ -18,6 +18,7 @@ You can download it here: https://drive.google.com/file/d/0Bz9_0VdXvv9bWUtqM0NBY
 Which artists did not make any albums at all? Include their names in your answer.
 */
 
+select
 
 /* TASK II
 Which artists recorded any tracks of the Latin genre?
